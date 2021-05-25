@@ -9,6 +9,7 @@ type Props = {
 
 export default function Header(props: Props) {
   const { todos } = props.useStore();
+  const notDoneTodos = todos.filter((todo) => !todo.done);
 
   return (
     <header className="flex flex-col items-center mt-8">
@@ -17,7 +18,8 @@ export default function Header(props: Props) {
       </p>
 
       <p className="text-indigo-300" data-testid="tasks-left">
-        You have {todos.length} new task{todos.length !== 1 && "s"} today
+        You have {notDoneTodos.length} new task
+        {notDoneTodos.length !== 1 && "s"} today
       </p>
 
       <ChevronDoubleDownIcon className="animate-bounce w-6 h-6 text-indigo-300 my-4" />

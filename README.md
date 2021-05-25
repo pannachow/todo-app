@@ -1,6 +1,8 @@
 # todo-app
 
-Development
+![Screenshot](./screenshot.png)
+
+## Development
 
 Install dependencies:
 ```
